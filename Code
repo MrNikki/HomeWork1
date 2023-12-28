@@ -1,0 +1,48 @@
+# a = 0
+# while a != "ні":
+#     autor = input("Введіть автора")
+#     quote = input("Введіть цитату")
+#     with open("quotes.txt", "a", encoding="utf-8") as file:
+#         file.write(quote+"\n")
+#         file.write("("+autor+")\n")
+#     a = input("Чи хочете додати ще?")
+
+    
+# # with open("quotes.txt", "r", encoding="utf-8") as file:
+# #     data = file.read()
+# # print(data)
+
+
+# with open("quotes.txt", "r", encoding="utf-8") as file:
+#     for line in file:
+#         if "(" in line:
+
+#             print(line)
+
+
+
+
+
+
+
+
+best_pupil = []
+class Pupil():
+    def __init__(self, surname, name, mark):
+        self.surname = surname
+        self.name = name
+        self.mark = mark
+
+sum = 0
+amaunt = 0
+
+with open("spisok.txt", "r", encoding="utf-8") as file:
+    for line in file:
+        data = line.split(" ")
+        data_pupil = Pupil(data[0], data[1], int(data[2]))
+        if data_pupil.mark == 5:
+            best_pupil.append(data_pupil.surname)
+        sum = sum + data_pupil.mark
+        amaunt = amaunt+1
+print(best_pupil)
+print(sum/amaunt)
